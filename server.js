@@ -1,9 +1,4 @@
-// username:usamarma4
-//passWord: Usamarma4
-// const express = require('express');
-// const colors = require('colors');
 
-//http://localhost:8080/api/v1/auth/register
 
 import express from "express";
 import colors from "colors";
@@ -14,16 +9,21 @@ import authRoutes from "./routes/authRoute.js";
 import categoryRoutes from './routes/categoryRoutes.js'
 import productRoutes from "./routes/productRoutes.js";
 import cors from "cors";
-import path from 'path'
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 
-//npm run dev
+
 
 //configure env
 dotenv.config()
 
 //database config
 connectDB();
+
+//esmodule fix
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 //rest object
 const app = express();
