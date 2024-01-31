@@ -43,7 +43,7 @@ app.use("/api/v1/product", productRoutes)
 // app.get("/", (req, res) => {
 //     res.send('<h1>Welcome</h1>');
 // });
-app.use('*', function(req,res) {
+app.get('*', function(req,res) {
     res.sendFile(path.join(__dirname, './client/build/index.html'));
 })
 
